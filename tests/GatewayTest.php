@@ -105,6 +105,7 @@ class GatewayTest extends GatewayTestCase
         $xml = Utils::getTemplate('PMTRESP', [
             'Timestamp' => substr(date('YmdHisu'), 0, 17),
             'RequestUID' => $this->options['transactionReference'],
+            'Version' => Gateway::VERSION,
             'Code' => '100',
         ]);
 
@@ -142,6 +143,7 @@ class GatewayTest extends GatewayTestCase
         $xml = Utils::getTemplate('PMTRESP', [
             'Timestamp' => substr(date('YmdHisu'), 0, 17),
             'RequestUID' => $this->options['transactionReference'],
+            'Version' => Gateway::VERSION,
             'Code' => '200',
         ]);
 
@@ -180,6 +182,7 @@ class GatewayTest extends GatewayTestCase
             'Timestamp' => substr(date('YmdHisu'), 0, 17),
             'RequestUID' => $this->options['transactionReference'],
             'Code' => '300',
+            'Version' => Gateway::VERSION,
             'Message' => 'no electricity',
         ]);
 
@@ -218,6 +221,7 @@ class GatewayTest extends GatewayTestCase
             'Timestamp' => substr(date('YmdHisu'), 0, 17),
             'ExtId' => $this->options['transactionReference'],
             'DocNo' => $this->options['transactionReference'],
+            'Version' => Gateway::VERSION,
             'StatCode' => 'E'
         ]);
 
@@ -256,6 +260,7 @@ class GatewayTest extends GatewayTestCase
             'Timestamp' => substr(date('YmdHisu'), 0, 17),
             'ExtId' => $this->options['transactionReference'],
             'DocNo' => $this->options['transactionReference'],
+            'Version' => Gateway::VERSION,
             'StatCode' => 'R'
         ]);
 
@@ -294,6 +299,7 @@ class GatewayTest extends GatewayTestCase
             'Timestamp' => substr(date('YmdHisu'), 0, 17),
             'ExtId' => $this->options['transactionReference'],
             'DocNo' => $this->options['transactionReference'],
+            'Version' => Gateway::VERSION,
             'StatCode' => 'R'
         ]);
 
@@ -331,6 +337,7 @@ class GatewayTest extends GatewayTestCase
             'Timestamp' => substr(date('YmdHisu', time() - ((15 * 60) + 1)), 0, 17),
             'ExtId' => $this->options['transactionReference'],
             'DocNo' => $this->options['transactionReference'],
+            'Version' => Gateway::VERSION,
             'StatCode' => 'R'
         ]);
 
@@ -364,6 +371,7 @@ class GatewayTest extends GatewayTestCase
             'Timestamp' => substr(date('YmdHisu'), 0, 17),
             'ExtId' => $this->options['transactionReference'],
             'DocNo' => $this->options['transactionReference'],
+            'Version' => Gateway::VERSION,
             'StatCode' => 'R'
         ]);
 

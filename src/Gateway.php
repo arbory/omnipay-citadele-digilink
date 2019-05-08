@@ -17,6 +17,7 @@ class Gateway extends AbstractGateway
     public const PAYMENT_CONFIRMATION_MESSAGE = 'PMTRESP';
     public const PAYMENT_STATUS_MESSAGE       = 'PMTSTATRESP';
     public const TIMESTAMP_FORMAT             = 'YmdHisu';
+    public const VERSION                      = '5.0';
 
     /**
      * @return string

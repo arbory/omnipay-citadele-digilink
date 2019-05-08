@@ -26,6 +26,7 @@ class PurchaseRequest extends AbstractRequest
             'PmtInfo'     => $this->getDescription(),
             'Amt'         => $this->getAmount(),
             'Ccy'         => $this->getCurrency(),
+            'Version'     => Gateway::VERSION,
             'Language'    => strtoupper($this->getLanguage())
         ];
 

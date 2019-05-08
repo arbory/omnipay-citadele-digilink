@@ -6,7 +6,7 @@
         <Extension>
             <Amai xmlns="http://online.citadele.lv/XMLSchemas/amai/" xsi:schemaLocation="http://online.citadele.lv/XMLSchemas/amai/ http://online.citadele.lv/XMLSchemas/amai/amai.xsd">
                 <Request>PMTSTATRESP</Request>
-                <Version>5.0</Version>
+                <Version><?=$variables['Version'] ?></Version>
                 <SignatureData></SignatureData>
             </Amai>
         </Extension>

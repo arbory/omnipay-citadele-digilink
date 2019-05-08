@@ -2,6 +2,7 @@
 
 namespace Omnipay\CitadeleDigilink\Utils;
 
+use Omnipay\CitadeleDigilink\Gateway;
 use Omnipay\Tests\TestCase;
 
 class UtilsTest extends TestCase
@@ -88,6 +89,7 @@ class UtilsTest extends TestCase
             'Timestamp' => '20190508064941000',
             'ExtId' => 'xx',
             'DocNo' => 'xx',
+            'Version' => Gateway::VERSION,
             'StatCode' => 'R'
         ]);
     }

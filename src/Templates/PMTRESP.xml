@@ -7,7 +7,7 @@
             <Amai xmlns="http://online.citadele.lv/XMLSchemas/amai/" xsi:schemaLocation="http://online.citadele.lv/XMLSchemas/amai/ http://online.citadele.lv/XMLSchemas/amai/amai.xsd">
                 <Request>PMTRESP</Request>
                 <RequestUID><?=$variables['RequestUID'] ?></RequestUID>
-                <Version>5.0</Version>
+                <Version><?=$variables['Version'] ?></Version>
                 <Code><?=$variables['Code'] ?></Code>
                 <Message><?=$variables['Message'] ?? "" ?></Message>
                 <SignatureData></SignatureData>
