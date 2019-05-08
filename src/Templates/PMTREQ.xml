@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<FIDAVISTA xmlns="http://ivis.eps.gov.lv/XMLSchemas/100017/fidavista/v1-1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ivis.eps.gov.lv/XMLSchemas/100017/fidavista/v1-1 http://ivis.eps.gov.lv/XMLSchemas/100017/fidavista/v1-1/fidavista.xsd">
+    <Header>
+        <Timestamp><?=$variables['Timestamp'] ?></Timestamp>
+        <From><?=$variables['From'] ?></From>
+        <Extension>
+            <Amai xmlns="http://online.citadele.lv/XMLSchemas/amai/" xsi:schemaLocation="http://online.citadele.lv/XMLSchemas/amai/ http://online.citadele.lv/XMLSchemas/amai/amai.xsd">
+                <Request>PMTREQ</Request>
+                <RequestUID><?=$variables['RequestUID'] ?></RequestUID>
+                <Version>5.0</Version>
+                <Language><?=$variables['Language'] ?></Language>
+                <ReturnURL><?=$variables['ReturnURL'] ?></ReturnURL>
+                <SignatureData />
+                <PaymentRequest>
+                    <ExtId><?=$variables['RequestUID'] ?></ExtId>
+                    <DocNo><?=$variables['RequestUID'] ?></DocNo>
+                    <TaxPmtFlg>N</TaxPmtFlg>
+                    <Ccy><?=$variables['Ccy'] ?></Ccy>
+                    <PmtInfo><?=$variables['PmtInfo'] ?></PmtInfo>
+                    <BenSet>
+                        <Priority>N</Priority>
+                        <Comm>OUR</Comm>
+                        <Amt><?=$variables['Amt'] ?></Amt>
+                        <BenAccNo><?=$variables['BenAccNo'] ?></BenAccNo>
+                        <BenName><?=$variables['BenName'] ?></BenName>
+                        <BenLegalId><?=$variables['BenLegalId'] ?></BenLegalId>
+                        <BenCountry><?=$variables['BenCountry'] ?></BenCountry>
+                    </BenSet>
+                </PaymentRequest>
+            </Amai>
+        </Extension>
+    </Header>
+</FIDAVISTA>

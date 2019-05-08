@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FIDAVISTA xmlns="http://ivis.eps.gov.lv/XMLSchemas/100017/fidavista/v1-1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ivis.eps.gov.lv/XMLSchemas/100017/fidavista/v1-1 http://ivis.eps.gov.lv/XMLSchemas/100017/fidavista/v1-1/fidavista.xsd">
+    <Header>
+        <Timestamp><?=$variables['Timestamp'] ?></Timestamp>
+        <From>1</From>
+        <Extension>
+            <Amai xmlns="http://online.citadele.lv/XMLSchemas/amai/" xsi:schemaLocation="http://online.citadele.lv/XMLSchemas/amai/ http://online.citadele.lv/XMLSchemas/amai/amai.xsd">
+                <Request>PMTRESP</Request>
+                <RequestUID><?=$variables['RequestUID'] ?></RequestUID>
+                <Version>5.0</Version>
+                <Code><?=$variables['Code'] ?></Code>
+                <Message><?=$variables['Message'] ?? "" ?></Message>
+                <SignatureData></SignatureData>
+            </Amai>
+        </Extension>
+    </Header>
+</FIDAVISTA>

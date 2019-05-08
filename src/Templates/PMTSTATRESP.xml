@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FIDAVISTA xmlns="http://ivis.eps.gov.lv/XMLSchemas/100017/fidavista/v1-1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ivis.eps.gov.lv/XMLSchemas/100017/fidavista/v1-1 http://ivis.eps.gov.lv/XMLSchemas/100017/fidavista/v1-1/fidavista.xsd">
+    <Header>
+        <Timestamp><?=$variables['Timestamp'] ?></Timestamp>
+        <From>1</From>
+        <Extension>
+            <Amai xmlns="http://online.citadele.lv/XMLSchemas/amai/" xsi:schemaLocation="http://online.citadele.lv/XMLSchemas/amai/ http://online.citadele.lv/XMLSchemas/amai/amai.xsd">
+                <Request>PMTSTATRESP</Request>
+                <Version>5.0</Version>
+                <SignatureData></SignatureData>
+            </Amai>
+        </Extension>
+    </Header>
+    <PmtStat>
+        <ExtId><?=$variables['ExtId'] ?></ExtId>
+        <DocNo><?=$variables['DocNo'] ?></DocNo>
+        <StatCode><?=$variables['StatCode'] ?></StatCode>
+        <BookDate>2019-05-08</BookDate>
+        <Extension>
+            <AccNo>LV12PARX12345443233</AccNo>
+            <Name>John Doe</Name> </Extension>
+    </PmtStat>
+</FIDAVISTA>
