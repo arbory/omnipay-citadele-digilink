@@ -89,13 +89,15 @@ class Utils
         return json_decode($json, true);
     }
 
-    public static function getTemplate(string $templatePath, array $variables): string
+    public static function getTemplate(string $templateName, array $variables): string
     {
+        $templatePath = dirname(__DIR__) .  '/Templates/' . $templateName . '.xml';
+
         extract($variables);
 
         ob_start();
 
-        include 'src/Templates/' . $templatePath . '.xml';
+        include $templatePath;
 
         return ob_get_clean();
     }
