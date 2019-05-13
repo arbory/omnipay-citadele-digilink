@@ -66,7 +66,7 @@ class GatewayTest extends GatewayTestCase
                         'Request' => 'PMTREQ',
                         'RequestUID' => 'abc123',
                         'Version' => '5.0',
-                        'Language' => 'LAT',
+                        'Language' => 'LV',
                         'ReturnURL' => 'http://localhost:8080/omnipay/citadele/',
                         // all actual signature data is stored in namespaced nodes which
                         // our XMLToArray parser is skipping

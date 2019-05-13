@@ -42,7 +42,7 @@ class Gateway extends AbstractGateway
             'merchantBankAccount'       => '',
             'merchantName'              => '',
             'merchantCountry'           => 'LV',
-            'language'                  => 'LAT',
+            'language'                  => 'LV',
             'testMode'                  => false
         );
     }
