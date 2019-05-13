@@ -9,7 +9,7 @@ abstract class AbstractRequest extends CommonAbstractRequest
     /**
      * @var string
      */
-    protected $testServerEndpoint = 'https://online.citadele.lv/amai/start.htm';
+    protected $testServerEndpoint = 'https://astra.citadele.lv/amai/start.htm';
 
     /**
      * @var string
