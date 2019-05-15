@@ -108,12 +108,4 @@ class CompleteRequest extends AbstractRequest
     {
         $this->setParameter('merchantId', $value);
     }
-
-    /**
-     * @return mixed
-     */
-    public function getMerchantId()
-    {
-        return $this->getParameter('merchantId');
-    }
 }

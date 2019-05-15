@@ -68,14 +68,6 @@ class Gateway extends AbstractGateway
     }
 
     /**
-     * @return string
-     */
-    public function getReturnUrl()
-    {
-        return $this->getParameter('returnUrl');
-    }
-
-    /**
      * @param string $value
      * @return $this
      */
@@ -119,27 +111,11 @@ class Gateway extends AbstractGateway
     }
 
     /**
-     * @return string
-     */
-    public function getBankCertificatePath()
-    {
-        return $this->getParameter('bankCertificatePath');
-    }
-
-    /**
      * @param string $value
      */
     public function setMerchantId($value)
     {
         return $this->setParameter('merchantId', $value);
-    }
-
-    /**
-     * @return string
-     */
-    public function getMerchantId()
-    {
-        return $this->getParameter('merchantId');
     }
 
     /**
@@ -151,14 +127,6 @@ class Gateway extends AbstractGateway
     }
 
     /**
-     * @return string
-     */
-    public function getMerchantLegalId()
-    {
-        return $this->getParameter('merchantLegalId');
-    }
-
-    /**
      * @param string $value
      */
     public function setMerchantName($value)
@@ -167,27 +135,11 @@ class Gateway extends AbstractGateway
     }
 
     /**
-     * @return string
-     */
-    public function getMerchantName()
-    {
-        return $this->getParameter('merchantName');
-    }
-
-    /**
      * @param string $value
      */
     public function setMerchantBankAccount($value)
     {
         return $this->setParameter('merchantBankAccount', $value);
-    }
-
-    /**
-     * @return string
-     */
-    public function getMerchantBankAccount()
-    {
-        return $this->getParameter('merchantBankAccount');
     }
 
     /**
