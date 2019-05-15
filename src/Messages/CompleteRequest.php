@@ -70,7 +70,7 @@ class CompleteRequest extends AbstractRequest
         }
 
         // validate integrity
-        if (!Utils::verifyXMLSignature($response['xmldata'], $this->getBankPublicCertificatePath())) {
+        if (!Utils::verifyXMLSignature($response['xmldata'], $this->getBankCertificatePath())) {
             throw new InvalidRequestException('Data is corrupt or has been changed by a third party');
         }
     }

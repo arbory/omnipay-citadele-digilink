@@ -78,17 +78,17 @@ abstract class AbstractRequest extends CommonAbstractRequest
      * @param string $value
      * @return $this
      */
-    public function setBankPublicCertificatePath($value)
+    public function setBankCertificatePath($value)
     {
-        return $this->setParameter('bankPublicCertificatePath', $value);
+        return $this->setParameter('bankCertificatePath', $value);
     }
 
     /**
      * @return string
      */
-    public function getBankPublicCertificatePath()
+    public function getBankCertificatePath()
     {
-        return $this->getParameter('bankPublicCertificatePath');
+        return $this->getParameter('bankCertificatePath');
     }
 
     /**

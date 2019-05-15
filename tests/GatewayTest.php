@@ -31,7 +31,7 @@ class GatewayTest extends GatewayTestCase
             'returnUrl'                 => 'http://localhost:8080/omnipay/citadele/',
             'privateCertificatePath'    => 'tests/Fixtures/key.pem',
             'publicCertificatePath'     => 'tests/Fixtures/key.pub',
-            'bankPublicCertificatePath' => 'tests/Fixtures/bank_key.pub',
+            'bankCertificatePath' => 'tests/Fixtures/bank_key.pub',
         ]);
 
         $this->options = array(
@@ -99,6 +99,17 @@ class GatewayTest extends GatewayTestCase
         $this->assertEquals($expectedRequestXmlValues, Utils::XMLToArray($response->getData()['xmldata']));
     }
 
+    public function testPurchaMissingConfiguration()
+    {
+        // initiate new unconfigured gateway
+        $this->gateway = new Gateway($this->getHttpClient(), $this->getHttpRequest());
+
+        $this->expectException(\Omnipay\Common\Exception\InvalidRequestException::class);
+        $this->expectExceptionMessage('The merchantId parameter is required');
+
+        $response = $this->gateway->purchase($this->options)->send();
+    }
+
     public function testPurchaseCompletePendingRegularRequest()
     {
         // build PMTRESP xml
@@ -116,7 +127,7 @@ class GatewayTest extends GatewayTestCase
         );
 
         // replace bank certificate with our public certificate
-        $this->gateway->setBankPublicCertificatePath($this->gateway->getPublicCertificatePath());
+        $this->gateway->setBankCertificatePath($this->gateway->getPublicCertificatePath());
 
         // simulate post request
         $postData = array(
@@ -154,7 +165,7 @@ class GatewayTest extends GatewayTestCase
         );
 
         // replace bank certificate with our public certificate
-        $this->gateway->setBankPublicCertificatePath($this->gateway->getPublicCertificatePath());
+        $this->gateway->setBankCertificatePath($this->gateway->getPublicCertificatePath());
 
         // simulate post request
         $postData = array(
@@ -193,7 +204,7 @@ class GatewayTest extends GatewayTestCase
         );
 
         // replace bank certificate with our public certificate
-        $this->gateway->setBankPublicCertificatePath($this->gateway->getPublicCertificatePath());
+        $this->gateway->setBankCertificatePath($this->gateway->getPublicCertificatePath());
 
         // simulate post request
         $postData = array(
@@ -232,7 +243,7 @@ class GatewayTest extends GatewayTestCase
         );
 
         // replace bank certificate with our public certificate
-        $this->gateway->setBankPublicCertificatePath($this->gateway->getPublicCertificatePath());
+        $this->gateway->setBankCertificatePath($this->gateway->getPublicCertificatePath());
 
         // simulate post request
         $postData = array(
@@ -271,7 +282,7 @@ class GatewayTest extends GatewayTestCase
         );
 
         // replace bank certificate with our public certificate
-        $this->gateway->setBankPublicCertificatePath($this->gateway->getPublicCertificatePath());
+        $this->gateway->setBankCertificatePath($this->gateway->getPublicCertificatePath());
 
         // simulate post request
         $postData = array(
@@ -313,7 +324,7 @@ class GatewayTest extends GatewayTestCase
         );
 
         // replace bank certificate with our public certificate
-        $this->gateway->setBankPublicCertificatePath($this->gateway->getPublicCertificatePath());
+        $this->gateway->setBankCertificatePath($this->gateway->getPublicCertificatePath());
 
         // simulate post request
         $postData = array(
@@ -348,7 +359,7 @@ class GatewayTest extends GatewayTestCase
         );
 
         // replace bank certificate with our public certificate
-        $this->gateway->setBankPublicCertificatePath($this->gateway->getPublicCertificatePath());
+        $this->gateway->setBankCertificatePath($this->gateway->getPublicCertificatePath());
 
         // simulate post request
         $postData = array(

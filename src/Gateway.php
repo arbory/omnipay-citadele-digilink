@@ -33,14 +33,6 @@ class Gateway extends AbstractGateway
     public function getDefaultParameters()
     {
         return array(
-            'returnUrl'                 => '',
-            'privateCertificatePath'    => '',
-            'publicCertificatePath'     => '',
-            'bankPublicCertificatePath' => '',
-            'merchantId'                => '',
-            'merchantLegalId'           => '',
-            'merchantBankAccount'       => '',
-            'merchantName'              => '',
             'merchantCountry'           => 'LV',
             'language'                  => 'LV',
             'testMode'                  => false
@@ -121,17 +113,17 @@ class Gateway extends AbstractGateway
      * @param string $value
      * @return $this
      */
-    public function setBankPublicCertificatePath($value)
+    public function setBankCertificatePath($value)
     {
-        return $this->setParameter('bankPublicCertificatePath', $value);
+        return $this->setParameter('bankCertificatePath', $value);
     }
 
     /**
      * @return string
      */
-    public function getBankPublicCertificatePath()
+    public function getBankCertificatePath()
     {
-        return $this->getParameter('bankPublicCertificatePath');
+        return $this->getParameter('bankCertificatePath');
     }
 
     /**

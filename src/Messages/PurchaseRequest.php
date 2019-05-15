@@ -14,6 +14,18 @@ class PurchaseRequest extends AbstractRequest
 
     private function getXMLData()
     {
+        // validate that at least we have all required config filled
+        $this->validate(
+            'merchantId',
+            'merchantLegalId',
+            'merchantBankAccount',
+            'merchantName',
+            'privateCertificatePath',
+            'publicCertificatePath',
+            'bankCertificatePath'
+        );
+
+        // build data array
         $data = [
             'Timestamp'   => $this->getTimestamp(),
             'From'        => $this->getMerchantId(),

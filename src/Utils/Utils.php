@@ -51,7 +51,7 @@ class Utils
     /**
      * @return string
      */
-    public static function verifyXMLSignature(string $xml, string $publicKeyPath) : bool
+    public static function verifyXMLSignature(string $xml, string $signingCertificatePath) : bool
     {
         $doc = new DOMDocument;
         $doc->loadXML($xml);
@@ -76,7 +76,7 @@ class Utils
         }
 
         $objKeyInfo = XMLSecEnc::staticLocateKeyInfo($objKey, $objDSig);
-        $objKey->loadKey($publicKeyPath, true);
+        $objKey->loadKey($signingCertificatePath, true, true);
         $result = $objXMLSecDSig->verify($objKey);
 
         return ($result === 1);

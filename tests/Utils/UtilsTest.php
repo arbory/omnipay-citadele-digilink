@@ -68,7 +68,7 @@ class UtilsTest extends TestCase
                     ]
                 ]
             ],
-           'PmtStat' => [
+            'PmtStat' => [
                 'ExtId' => 'xx',
                 'DocNo' => 'xx',
                 'StatCode' => 'R',
