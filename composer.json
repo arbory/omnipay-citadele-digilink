@@ -1,6 +1,7 @@
 {
     "name": "arbory/omnipay-citadele-digilink",
     "description": "Citadele Digilink Omnipay package",
+    "license": "MIT",
     "type": "library",
     "authors": [
         {
