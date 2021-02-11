@@ -225,6 +225,49 @@ class GatewayTest extends GatewayTestCase
         $this->assertSame('Bank internal error: no electricity', $response->getMessage());
     }
 
+    public function testPurchaseCompleteErrorWithoutDescriptionRegularRequest()
+    {
+        // build PMTRESP xml
+        $xml = Utils::getTemplate('PMTRESP', [
+            'Timestamp' => substr(date('YmdHisu'), 0, 17),
+            'RequestUID' => $this->options['transactionReference'],
+            'Code' => '300',
+            'Version' => Gateway::VERSION,
+            'Message' => '',
+        ]);
+
+        // remove Messsage element as in some cases there are no Message node
+        $xml = str_replace('<Message></Message>', '', $xml);
+
+        $signedXML = Utils::signXML(
+            $xml,
+            $this->gateway->getPrivateCertificatePath(),
+            $this->gateway->getPublicCertificatePath()
+        );
+
+        // replace bank certificate with our public certificate
+        $this->gateway->setBankCertificatePath($this->gateway->getPublicCertificatePath());
+
+        // simulate post request
+        $postData = array(
+            'xmldata' => $signedXML
+        );
+        $this->getHttpRequest()->setMethod('POST');
+        $this->getHttpRequest()->request->replace($postData);
+
+        // perform actual request
+        $response = $this->gateway->completePurchase($this->options)->send();
+
+        $this->assertFalse($response->isPending());
+        $this->assertFalse($response->isSuccessful());
+        $this->assertFalse($response->isServerToServerRequest());
+        $this->assertFalse($response->isRedirect());
+        $this->assertFalse($response->isCancelled());
+        $this->assertSame('abc123', $response->getTransactionReference());
+        $this->assertSame('Bank internal error', $response->getMessage());
+    }
+
+
     public function testPurchaseCompleteSucessStatusRequest()
     {
         // build PMTSTATRESP xml

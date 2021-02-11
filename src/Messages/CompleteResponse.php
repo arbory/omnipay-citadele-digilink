@@ -92,7 +92,11 @@ class CompleteResponse extends AbstractResponse
             return 'Payment has been canceled';
         } elseif ($this->isConfirmationMessage() &&
             $this->data['Header']['Extension']['Amai']['Code'] === self::STATUS_ERRORED) {
-            $message = 'Bank internal error: ' . $this->data['Header']['Extension']['Amai']['Message'];
+            $message = 'Bank internal error';
+
+            if (isset($this->data['Header']['Extension']['Amai']['Message'])) {
+                $message .= ': ' . $this->data['Header']['Extension']['Amai']['Message'];
+            }
         }
 
         return $message;
